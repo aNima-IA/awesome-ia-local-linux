@@ -7,7 +7,7 @@
 Una colección seleccionada de herramientas, modelos, runtimes, aplicaciones y recursos para ejecutar, desarrollar y asegurar sistemas de IA locales en Linux.
 
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![Link check](https://github.com/marrionesa/awesome-ia-local-linux/actions/workflows/link-check.yml/badge.svg)](https://github.com/marrionesa/awesome-ia-local-linux/actions/workflows/link-check.yml)
+[![Link check](https://github.com/anima-ia/awesome-ia-local-linux/actions/workflows/link-check.yml/badge.svg)](https://github.com/anima-ia/awesome-ia-local-linux/actions/workflows/link-check.yml)
 
 [Cómo contribuir](CONTRIBUTING.md) · [Catálogo web](website/README.md) · [Reportar un enlace roto](.github/ISSUE_TEMPLATE/report-broken-link.yml)
 
