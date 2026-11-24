@@ -1,0 +1,60 @@
+# Comprobación de enlaces del listado y documentación.
+# Se activa al publicar el repositorio.
+#
+# Diseño deliberadamente tolerante:
+# - fallo duro solo en pull_request; en schedule produce informe, no rojo,
+#   para no normalizar un badge fallido por bloqueos de terceros;
+# - exclusiones de dominios que bloquean bots (rate limits / 403) documentados;
+# - informes como artefacto descargable para revisión manual.
+#
+# Ejecución local equivalente:
+#   bash scripts/check-links.sh          # comprobador curl incluido en el repo
+#   lychee README.md README.en.md docs CONTRIBUTING.md SUPPORT.md SECURITY.md \
+#          CHANGELOG.md --max-retries 2 --max-concurrency 8 --no-progress
+
+name: Link check
+
+on:
+  schedule:
+    - cron: "0 4 * * 1" # lunes 04:00 UTC
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "**/*.md"
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Comprobar enlaces con lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Dominios excluidos: LinkedIn/X (bloqueo de bots), Reddit (rate limit
+          # intermitente para clientes no navegador), GitHub Notifications.
+          args: >-
+            --verbose
+            --no-progress
+            --max-retries 2
+            --max-concurrency 8
+            --timeout 30
+            --user-agent 'Mozilla/5.0 (X11; Linux x86_64) awesome-ia-local-linux-link-check'
+            --exclude 'linkedin\.com|twitter\.com|x\.com|reddit\.com'
+            'README.md' 'README.en.md' 'CONTRIBUTING.md' 'SUPPORT.md' 'SECURITY.md' 'CHANGELOG.md' 'docs/**/*.md'
+          format: markdown
+          output: ./lychee/out.md
+          # Fallo duro solo cuando el PR introduce enlaces nuevos rotos.
+          fail: ${{ github.event_name == 'pull_request' }}
+
+      - name: Subir informe
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lychee-report
+          path: ./lychee/out.md
+          if-no-files-found: ignore

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+# Copia auto-generada en build desde imgs-categorias-todas/ (fuente que sí se
+# publica). En un clone fresco, `npm run data` la regenera antes de `npm test`.
+public/images/
+bun.lock
+bun.lockb

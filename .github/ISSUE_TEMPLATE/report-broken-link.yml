@@ -1,0 +1,57 @@
+name: Reportar enlace roto
+description: Un enlace del listado no funciona o apunta a algo distinto de lo descrito
+title: "[Enlace roto]: "
+labels: ["broken-link", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por el reporte. Los enlaces rotos tienen prioridad de revisión.
+
+  - type: textarea
+    id: url
+    attributes:
+      label: Enlace afectado
+      description: Pega la URL que falla, tal cual aparece en el README.
+      placeholder: https://…
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: Dónde aparece
+      description: Fichero, sección y recurso afectado.
+      placeholder: ej. README.md, sección «H. Voz», entrada de Piper
+    validations:
+      required: true
+
+  - type: dropdown
+    id: problem
+    attributes:
+      label: Tipo de problema
+      options:
+        - El enlace da error (404, timeout…)
+        - El enlace apunta a otro proyecto o a un mirror, no a la fuente oficial
+        - El proyecto cambió de repositorio / organización
+        - El proyecto fue archivado o abandonado
+        - El proyecto ya no funciona en Linux
+        - Otro (descríbelo abajo)
+    validations:
+      required: true
+
+  - type: input
+    id: correct-url
+    attributes:
+      label: URL correcta (si la conoces)
+      placeholder: https://…
+    validations:
+      required: false
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Detalles adicionales
+      description: Mensaje de error, fecha de comprobación, navegador o comando usado…
+    validations:
+      required: false

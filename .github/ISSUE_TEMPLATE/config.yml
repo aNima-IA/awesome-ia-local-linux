@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Soporte y preguntas
+    url: https://github.com/marrionesa/awesome-ia-local-linux/blob/main/SUPPORT.md
+    about: Cómo pedir ayuda y dónde no abrir issues (este repositorio no da soporte de las herramientas enlazadas).
+  - name: Reportar una vulnerabilidad
+    url: https://github.com/marrionesa/awesome-ia-local-linux/blob/main/SECURITY.md
+    about: Problemas de seguridad (enlaces maliciosos, suplantaciones) — reporte privado, sin issues públicos.

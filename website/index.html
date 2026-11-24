@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Awesome IA Local Linux — Catálogo de IA Local</title>
+<meta name="description" content="Catálogo retro de IA local en Linux — generado en vivo desde el README del repositorio awesome-ia-local-linux.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23008080'/%3E%3Crect x='2' y='3' width='12' height='9' fill='%23c0c0c0'/%3E%3Crect x='3' y='4' width='10' height='6' fill='%23fff'/%3E%3Crect x='5' y='12' width='6' height='2' fill='%23808080'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+<div class="window" id="win">
+  <div class="win-header">
+  <div class="titlebar">
+    <span class="t" id="titletext">Awesome IA Local Linux — Catálogo de IA Local</span>
+    <button class="tbtn" aria-hidden="true" tabindex="-1">_</button>
+    <button class="tbtn" aria-hidden="true" tabindex="-1">□</button>
+    <button class="tbtn" aria-hidden="true" tabindex="-1">✕</button>
+  </div>
+
+  <div class="toolbar">
+    <button class="tbi" id="tb-back" title="Atrás"><span class="ic">←</span><span>Back</span></button>
+    <button class="tbi" id="tb-fwd" title="Adelante"><span class="ic">→</span><span>Forward</span></button>
+    <span class="tb-sep"></span>
+    <button class="tbi" id="tb-home" title="Inicio"><span class="ic">⌂</span><span>Home</span></button>
+    <button class="tbi" id="tb-reload" title="Recargar el catálogo desde GitHub"><span class="ic">⟳</span><span>Reload</span></button>
+    <span class="tb-sep"></span>
+    <button class="tbi" id="tb-gh" title="Repositorio en GitHub"><span class="ic">G</span><span>Github</span></button>
+    <span class="tb-sep"></span>
+    <button class="tbi" id="tb-lang" title="Cambiar idioma ES/EN"><span class="ic">文</span><span id="tb-lang-label">ES</span></button>
+  </div>
+
+  <div class="banner" role="img" aria-label="Banner: Awesome IA Local Linux — shareware, Linux compatible, flashing marquee"></div>
+  <div class="marquee" aria-hidden="true"><span id="mq-text">★ CATÁLOGO DE IA LOCAL EN LINUX ★ CARGANDO DATOS…</span></div>
+
+  <div class="quickbar" id="quickbar" aria-label="Páginas del proyecto"></div>
+  </div>
+
+  <div class="layout">
+    <nav class="sidebar" aria-label="Secciones del catálogo">
+      <button class="navbtn" data-route="home">Home</button>
+      <div id="catnav"></div>
+      <div class="searchbox">
+        <label for="q" style="font-weight:bold;font-size:10.5px">BUSCAR:</label>
+        <input id="q" placeholder="tool, model, api…" autocomplete="off">
+      </div>
+      <div class="counter"><span class="digits" id="hits">000000</span><div style="font-size:9px;font-weight:normal;margin-top:3px">(visitas)</div></div>
+    </nav>
+    <main class="content" id="main" tabindex="-1"></main>
+  </div>
+
+  <div class="statusbar">
+    <div class="sb grow" id="sb-status"><span class="busy"></span>Conectando con github.com…</div>
+    <div class="sb" id="sb-data">DATA: —</div>
+    <div class="sb" id="sb-count">ITEMS: —</div>
+    <div class="sb">CC0-1.0</div>
+  </div>
+</div>
+
+<noscript><div style="max-width:640px;margin:16px auto;background:#ffffc8;border:1px solid #000;padding:12px;font-family:sans-serif">
+Este catálogo necesita JavaScript para leer el README en vivo desde GitHub.
+Puedes leer el listado directamente en <a href="https://github.com/marrionesa/awesome-ia-local-linux">github.com/marrionesa/awesome-ia-local-linux</a>.
+</div></noscript>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

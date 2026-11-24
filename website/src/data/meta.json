@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-11-24T20:07:20.498Z",
+  "source": "repo-local",
+  "repo": "marrionesa/awesome-ia-local-linux",
+  "branch": "main",
+  "items": 120,
+  "sections": 13,
+  "images": {
+    "copied": 120,
+    "withoutBoxArt": 1
+  },
+  "github": {
+    "repos": 110,
+    "withStats": 111,
+    "fetched": 0,
+    "failed": 0,
+    "rateLimited": false
+  }
+}

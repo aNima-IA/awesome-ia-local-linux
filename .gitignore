@@ -1,0 +1,33 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores e IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Trazabilidad de investigación y pool de candidatos: ficheros locales de
+# trabajo, no publicados en el repositorio (decisión pre-publicación 2026-11).
+# El registro auditable publicado es docs/research/SOURCES.md.
+# Anclado a la raíz: no debe afectar a website/src/data/ (snapshots de la web, sí publicados).
+/data/
+docs/research/raw/
+research/
+# Build local de la web (regenerado con `npm run build`)
+website/dist/
+
+# Salidas locales de validación
+node_modules/
+scripts/tmp/
+*.log
+.lycheecache
+result-*.json
+
+# Copias de trabajo locales
+*.bak
+*.tmp
+

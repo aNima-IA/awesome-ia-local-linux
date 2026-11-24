@@ -1,0 +1,88 @@
+name: Añadir recurso
+description: Propón un nuevo recurso para el listado (herramienta, modelo, guía…)
+title: "[Recurso]: "
+labels: ["add-resource", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por proponer un recurso. Antes de enviarlo, comprueba que:
+        1. Funciona en Linux de forma nativa o con soporte documentado.
+        2. Tiene licencia identificable y documentación oficial.
+        3. No está ya en el listado (usa la búsqueda del repositorio).
+        4. La URL que propones es la fuente oficial del proyecto.
+
+  - type: input
+    id: name
+    attributes:
+      label: Nombre del recurso
+      description: Nombre oficial del proyecto, tal como aparece en su web o repositorio.
+      placeholder: ej. Ollama
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL oficial
+      description: Repositorio canónico, web oficial o documentación oficial. Sin mirrors ni forks.
+      placeholder: https://…
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Categoría propuesta
+      description: Usa la más precisa. Si ninguna encaja, elige «Otra / nueva categoría» y justifícalo.
+      options:
+        - A. Runtimes de LLM locales
+        - B. Servidores y APIs de inferencia
+        - C. Modelos abiertos
+        - D. GPU, hardware y aceleración
+        - E. IA de escritorio en Linux
+        - F. Agentes de IA y automatización
+        - G. RAG y sistemas de conocimiento
+        - H. Voz
+        - I. Imagen, vídeo e IA creativa
+        - J. Monitorización y rendimiento
+        - K. Seguridad, privacidad y hardening
+        - L. Ecosistema de desarrollo
+        - M. Tutoriales y documentación
+        - Otra / nueva categoría
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción breve (redactada por ti)
+      description: Una o dos frases que expliquen qué hace y para quién es. No copies la descripción oficial.
+      placeholder: ej. Motor de inferencia en C/C++ que ejecuta modelos GGUF en CPU y GPU…
+    validations:
+      required: true
+
+  - type: input
+    id: license
+    attributes:
+      label: Licencia
+      description: Si la conoces, indícala (SPDX si es estándar, ej. MIT, Apache-2.0). Si es propietaria, escribe «Propietaria».
+      placeholder: ej. MIT
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Verificación previa
+      options:
+        - label: He comprobado que el recurso no está ya en el listado
+          required: true
+        - label: La URL abre el proyecto correcto y es la fuente oficial
+          required: true
+        - label: El recurso funciona en Linux o tiene soporte documentado
+          required: true
+        - label: Tiene documentación oficial disponible
+          required: true
+        - label: La descripción la he redactado yo, no copiada del proyecto
+          required: true
